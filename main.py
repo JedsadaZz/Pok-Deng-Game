@@ -71,9 +71,9 @@ async def read_root():
                     </button>
                 </div>
 
-                <!-- "New Game" button, hidden by default -->
-                <button id="new-game-button" onclick="startNewGame()" class="hidden w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 mt-4 transition-colors duration-300">
-                    New Game
+                <!-- Restart button, always visible -->
+                <button id="restart-button" onclick="startNewGame()" class="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-300 mt-2">
+                    Restart Game
                 </button>
 
                 <!-- Area to display game results -->
@@ -120,7 +120,6 @@ async def read_root():
                     if (data.game_over) {
                         resultDiv.innerHTML += `<p class="text-4xl font-bold text-red-700 mt-4">GAME OVER</p>`;
                         document.getElementById('play-controls').classList.add('hidden');
-                        document.getElementById('new-game-button').classList.remove('hidden');
                     }
                 }
 
@@ -133,7 +132,6 @@ async def read_root():
                     document.getElementById('player-chips').innerText = data.player_chips;
                     document.getElementById('result').innerHTML = '';
                     document.getElementById('play-controls').classList.remove('hidden');
-                    document.getElementById('new-game-button').classList.add('hidden');
                     document.getElementById('bet').value = 5;
                 }
             </script>
